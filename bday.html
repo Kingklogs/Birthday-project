@@ -1,0 +1,109 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+.screen {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+.active { display: flex; }
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff4d6d;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.fade {
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="screen active fade">
+  <h1>Hey… don’t rush this.</h1>
+  <button onclick="next()">Take your time</button>
+</div>
+
+<div class="screen fade">
+  <p id="text"></p>
+  <button onclick="next()">Continue</button>
+</div>
+
+<div class="screen fade">
+  <p>I didn’t plan this… but you became important to me.</p>
+  <button onclick="next()">Continue</button>
+</div>
+
+<div class="screen fade">
+  <p>At first, you were just you…</p>
+  <button onclick="next()">Continue</button>
+</div>
+
+<div class="screen fade">
+  <p>Then I started noticing everything.</p>
+  <button onclick="next()">Continue</button>
+</div>
+
+<div class="screen fade">
+  <p>I appreciate you more than you know.</p>
+  <button onclick="next()">Continue</button>
+</div>
+
+<div class="screen fade">
+  <h2>And I didn’t know what to do with that feeling.</h2>
+  <button onclick="next()">Continue</button>
+</div>
+
+<div class="screen fade">
+  <h1>Happy Birthday 🎉</h1>
+  <p>I’m really glad you exist.</p>
+  <button onclick="next()">One last thing</button>
+</div>
+
+<div class="screen fade">
+  <p>No pressure. No expectations.</p>
+  <p>I just wanted you to know.</p>
+</div>
+
+<script>
+let screens = document.querySelectorAll('.screen');
+let index = 0;
+
+function next() {
+  screens[index].classList.remove('active');
+  index++;
+  if (screens[index]) {
+    screens[index].classList.add('active');
+  }
+}
+</script>
+
+</body>
+</html>
+```
