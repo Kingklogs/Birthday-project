@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Birthday Website</title>
-
+<title>For You ❤️</title>
 <style>
-/* ===== DESIGN (CSS) ===== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -14,7 +11,6 @@ body {
   color: white;
   overflow: hidden;
 }
-
 .screen {
   display: none;
   height: 100vh;
@@ -24,66 +20,62 @@ body {
   text-align: center;
   padding: 20px;
 }
-
-.active {
-  display: flex;
-}
+.active { display: flex; }
 
 button {
   margin-top: 20px;
-  padding: 12px 24px;
+  padding: 10px 20px;
   background: #ff4d6d;
   border: none;
   color: white;
   cursor: pointer;
-  border-radius: 8px;
-  font-size: 16px;
 }
 
 .fade {
-  animation: fadeIn 1.5s ease-in;
+  animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
-  from {opacity: 0; transform: translateY(10px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-h1, h2, p {
-  max-width: 600px;
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 </style>
 </head>
 
 <body>
 
-<!-- ===== PAGES (HTML) ===== -->
-
 <div class="screen active fade">
   <h1>Hey… don’t rush this.</h1>
-  <p>This is something special.</p>
-  <button onclick="next()">Start</button>
+  <button onclick="next()">Take your time</button>
 </div>
 
 <div class="screen fade">
-  <h2>I didn’t plan this…</h2>
-  <p>But somehow, you became important.</p>
+  <p id="text"></p>
   <button onclick="next()">Continue</button>
 </div>
 
 <div class="screen fade">
-  <h2>At first, you were just you.</h2>
+  <p>I didn’t plan this… but you became important to me.</p>
   <button onclick="next()">Continue</button>
 </div>
 
 <div class="screen fade">
-  <h2>Then I started noticing everything.</h2>
-  <p>The way you talk… the way you think…</p>
+  <p>At first, you were just you…</p>
   <button onclick="next()">Continue</button>
 </div>
 
 <div class="screen fade">
-  <h2>You matter more than you know.</h2>
+  <p>Then I started noticing everything.</p>
+  <button onclick="next()">Continue</button>
+</div>
+
+<div class="screen fade">
+  <p>I appreciate you more than you know.</p>
+  <button onclick="next()">Continue</button>
+</div>
+
+<div class="screen fade">
+  <h2>And I didn’t know what to do with that feeling.</h2>
   <button onclick="next()">Continue</button>
 </div>
 
@@ -94,23 +86,23 @@ h1, h2, p {
 </div>
 
 <div class="screen fade">
-  <h2>No pressure. No expectations.</h2>
-  <p>I just wanted you to know that.</p>
+  <p>No pressure. No expectations.</p>
+  <p>I just wanted you to know.</p>
 </div>
 
-<!-- ===== LOGIC (JS) ===== -->
 <script>
-let screens = document.querySelectorAll(".screen");
+let screens = document.querySelectorAll('.screen');
 let index = 0;
 
 function next() {
-  screens[index].classList.remove("active");
+  screens[index].classList.remove('active');
   index++;
   if (screens[index]) {
-    screens[index].classList.add("active");
+    screens[index].classList.add('active');
   }
 }
 </script>
 
 </body>
 </html>
+```
