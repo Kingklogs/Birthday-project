@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,14 +28,18 @@ body {
 .active { display: flex; }
 
 button {
-  margin-top: 20px;
-  padding: 12px 24px;
+  margin: 10px;
+  padding: 10px 20px;
   background: #ff4d6d;
   border: none;
   color: white;
   cursor: pointer;
   border-radius: 8px;
-  font-size: 16px;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
 }
 
 .fade {
@@ -43,108 +47,144 @@ button {
 }
 
 @keyframes fadeIn {
-  from {opacity: 0; transform: translateY(10px);}
-  to {opacity: 1; transform: translateY(0);}
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 .message {
   max-width: 700px;
-  line-height: 1.6;
-  font-size: 16px;
   text-align: left;
+  line-height: 1.6;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Opening -->
+<!-- Screens -->
 <div class="screen active fade">
-  <h1>Hey… don’t rush this.</h1>
-  <button onclick="next()">Take your time</button>
+  <h1 class="type" data-text="Hey… don’t rush this."></h1>
+  <button onclick="next()">Start</button>
 </div>
 
-<!-- Intro -->
 <div class="screen fade">
-  <p>I didn’t expect much at first… but somehow, you became someone I look forward to.</p>
-  <button onclick="next()">Continue</button>
+  <p class="type" data-text="I didn’t expect much at first… but somehow, you became someone I look forward to."></p>
+  <div class="nav">
+    <button onclick="prev()">Back</button>
+    <button onclick="next()">Continue</button>
+  </div>
 </div>
 
-<!-- Distance -->
 <div class="screen fade">
-  <p>Even with the distance… you’ve found a way to be present.</p>
-  <button onclick="next()">Continue</button>
+  <p class="type" data-text="Even with the distance… you’ve found a way to be present."></p>
+  <div class="nav">
+    <button onclick="prev()">Back</button>
+    <button onclick="next()">Continue</button>
+  </div>
 </div>
 
-<!-- Appreciation -->
 <div class="screen fade">
-  <p>I like how easy it feels talking to you.  
-  I like how you make things feel… simple.</p>
-  <button onclick="next()">Continue</button>
+  <p class="type" data-text="I like how easy it feels talking to you. I like how you make things feel… simple."></p>
+  <div class="nav">
+    <button onclick="prev()">Back</button>
+    <button onclick="next()">Continue</button>
+  </div>
 </div>
 
-<!-- Honest -->
 <div class="screen fade">
-  <p>It’s still new… but there’s something here.  
-  And I’m glad I didn’t ignore it.</p>
-  <button onclick="next()">Continue</button>
+  <p class="type" data-text="It’s still new… but there’s something here. And I’m glad I didn’t ignore it."></p>
+  <div class="nav">
+    <button onclick="prev()">Back</button>
+    <button onclick="next()">Continue</button>
+  </div>
 </div>
 
-<!-- Long message trigger -->
 <div class="screen fade">
-  <h2>There’s something I wanted to say…</h2>
+  <h2 class="type" data-text="There’s something I wanted to say…"></h2>
   <button onclick="next()">Read it</button>
 </div>
 
-<!-- Long message -->
 <div class="screen fade">
   <div class="message">
-    <p>I won’t pretend we’ve known each other forever… because we haven’t. But somehow, in the time we’ve had, you’ve become someone I genuinely appreciate.</p>
+    <p class="type" data-text="I won’t pretend we’ve known each other forever… because we haven’t. But somehow, in the time we’ve had, you’ve become someone I genuinely appreciate."></p>
 
-    <p>It’s funny how something new can still feel meaningful. How conversations can become something you look forward to, even when there’s distance between us.</p>
+    <p class="type" data-text="It’s funny how something new can still feel meaningful. How conversations can become something you look forward to, even when there’s distance between us."></p>
 
-    <p>I don’t think I say it enough, but I notice the little things—the way you show up, the way you make things feel easy, the way you’ve made your presence felt, even from far away.</p>
+    <p class="type" data-text="I don’t think I say it enough, but I notice the little things—the way you show up, the way you make things feel easy, the way you’ve made your presence felt, even from far away."></p>
 
-    <p>And maybe that’s what I like the most… that nothing feels forced. It’s just been real, simple, and growing in its own way.</p>
+    <p class="type" data-text="And maybe that’s what I like the most… that nothing feels forced. It’s just been real, simple, and growing in its own way."></p>
 
-    <p>So today isn’t about saying too much or trying to define everything. It’s just about you.</p>
+    <p class="type" data-text="So today isn’t about saying too much or trying to define everything. It’s just about you."></p>
 
-    <p>I hope this year brings you clarity, growth, and moments that actually matter. I hope you become everything you’re working towards… and more.</p>
+    <p class="type" data-text="I hope this year brings you clarity, growth, and moments that actually matter. I hope you become everything you’re working towards… and more."></p>
 
-    <p>And I hope, somewhere along the way, we get more time to build something worth remembering.</p>
+    <p class="type" data-text="And I hope, somewhere along the way, we get more time to build something worth remembering."></p>
 
-    <p><strong>Happy Birthday.</strong></p>
+    <p class="type" data-text="Happy Birthday."></p>
   </div>
 
-  <button onclick="next()">Continue</button>
+  <div class="nav">
+    <button onclick="prev()">Back</button>
+    <button onclick="next()">Continue</button>
+  </div>
 </div>
 
-<!-- Birthday -->
 <div class="screen fade">
-  <h1>Happy Birthday 🎉</h1>
-  <p>I’m really glad you exist.</p>
-  <button onclick="next()">One last thing</button>
+  <h1 class="type" data-text="Happy Birthday 🎉"></h1>
+  <p class="type" data-text="I’m really glad you exist."></p>
+  <div class="nav">
+    <button onclick="prev()">Back</button>
+    <button onclick="next()">Last</button>
+  </div>
 </div>
 
-<!-- Ending -->
 <div class="screen fade">
-  <p>No pressure. No expectations.</p>
-  <p>— From someone who’s really glad they met you.</p>
+  <p class="type" data-text="No pressure. No expectations. — From someone who’s really glad they met you."></p>
+  <button onclick="prev()">Back</button>
 </div>
 
 <script>
 let screens = document.querySelectorAll(".screen");
 let index = 0;
 
-function next() {
-  screens[index].classList.remove("active");
-  index++;
-  if (screens[index]) {
-    screens[index].classList.add("active");
-  }
+function showScreen(i) {
+  screens.forEach(s => s.classList.remove("active"));
+  index = i;
+  screens[index].classList.add("active");
+  startTyping(screens[index]);
 }
+
+function next() {
+  if (index < screens.length - 1) showScreen(index + 1);
+}
+
+function prev() {
+  if (index > 0) showScreen(index - 1);
+}
+
+function startTyping(screen) {
+  let elements = screen.querySelectorAll(".type");
+  elements.forEach(el => {
+    let text = el.getAttribute("data-text");
+    el.innerHTML = "";
+    let i = 0;
+    let speed = 30;
+
+    function type() {
+      if (i < text.length) {
+        el.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(type, speed);
+      }
+    }
+    type();
+  });
+}
+
+// start typing first screen
+startTyping(screens[0]);
 </script>
 
 </body>
 </html>
-```
+
