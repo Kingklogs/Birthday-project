@@ -10,137 +10,153 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f0f0f, #1a1a2e, #16213e);
-  color: white;
-  overflow: hidden;
-}
-
-.screen {
-  display: none;
-  height: 100vh;
+  background: #ffffff;
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 30px;
+  height: 100vh;
 }
 
-.active { display: flex; }
-
-button {
-  margin: 10px;
-  padding: 10px 20px;
-  background: #ff4d6d;
-  border: none;
-  color: white;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-.nav {
+/* Card container */
+.container {
+  width: 90%;
+  max-width: 600px;
+  height: 80vh;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: white;
 }
 
-.fade {
-  animation: fadeIn 1.5s ease-in;
+/* Screens */
+.screen {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
 }
 
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+.active {
+  display: block;
 }
 
+/* Text */
+h1, h2, p {
+  color: #111;
+  line-height: 1.5;
+}
+
+/* Buttons */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid #111;
+  background: transparent;
+  color: #111;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* Message block */
 .message {
-  max-width: 700px;
   text-align: left;
-  line-height: 1.6;
+  max-width: 500px;
+  margin: auto;
+}
+
+/* Floating subtle hearts */
+#particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  font-size: 14px;
+  opacity: 0.05;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-120%);
+  }
 }
 </style>
 </head>
 
 <body>
 
+<div class="container">
+
+<div id="particles"></div>
+
 <!-- Screens -->
-<div class="screen active fade">
+
+<div class="screen active">
   <h1 class="type" data-text="Hey… don’t rush this."></h1>
   <button onclick="next()">Start</button>
 </div>
 
-<div class="screen fade">
+<div class="screen">
   <p class="type" data-text="I didn’t expect much at first… but somehow, you became someone I look forward to."></p>
-  <div class="nav">
-    <button onclick="prev()">Back</button>
-    <button onclick="next()">Continue</button>
-  </div>
+  <button onclick="next()">Continue</button>
 </div>
 
-<div class="screen fade">
+<div class="screen">
   <p class="type" data-text="Even with the distance… you’ve found a way to be present."></p>
-  <div class="nav">
-    <button onclick="prev()">Back</button>
-    <button onclick="next()">Continue</button>
-  </div>
+  <button onclick="next()">Continue</button>
 </div>
 
-<div class="screen fade">
+<div class="screen">
   <p class="type" data-text="I like how easy it feels talking to you. I like how you make things feel… simple."></p>
-  <div class="nav">
-    <button onclick="prev()">Back</button>
-    <button onclick="next()">Continue</button>
-  </div>
+  <button onclick="next()">Continue</button>
 </div>
 
-<div class="screen fade">
+<div class="screen">
   <p class="type" data-text="It’s still new… but there’s something here. And I’m glad I didn’t ignore it."></p>
-  <div class="nav">
-    <button onclick="prev()">Back</button>
-    <button onclick="next()">Continue</button>
-  </div>
+  <button onclick="next()">Continue</button>
 </div>
 
-<div class="screen fade">
+<div class="screen">
   <h2 class="type" data-text="There’s something I wanted to say…"></h2>
   <button onclick="next()">Read it</button>
 </div>
 
-<div class="screen fade">
+<div class="screen">
   <div class="message">
     <p class="type" data-text="I won’t pretend we’ve known each other forever… because we haven’t. But somehow, in the time we’ve had, you’ve become someone I genuinely appreciate."></p>
-
     <p class="type" data-text="It’s funny how something new can still feel meaningful. How conversations can become something you look forward to, even when there’s distance between us."></p>
-
     <p class="type" data-text="I don’t think I say it enough, but I notice the little things—the way you show up, the way you make things feel easy, the way you’ve made your presence felt, even from far away."></p>
-
     <p class="type" data-text="And maybe that’s what I like the most… that nothing feels forced. It’s just been real, simple, and growing in its own way."></p>
-
     <p class="type" data-text="So today isn’t about saying too much or trying to define everything. It’s just about you."></p>
-
     <p class="type" data-text="I hope this year brings you clarity, growth, and moments that actually matter. I hope you become everything you’re working towards… and more."></p>
-
     <p class="type" data-text="And I hope, somewhere along the way, we get more time to build something worth remembering."></p>
-
     <p class="type" data-text="Happy Birthday."></p>
   </div>
-
-  <div class="nav">
-    <button onclick="prev()">Back</button>
-    <button onclick="next()">Continue</button>
-  </div>
+  <button onclick="next()">Continue</button>
 </div>
 
-<div class="screen fade">
+<div class="screen">
   <h1 class="type" data-text="Happy Birthday 🎉"></h1>
   <p class="type" data-text="I’m really glad you exist."></p>
-  <div class="nav">
-    <button onclick="prev()">Back</button>
-    <button onclick="next()">Last</button>
-  </div>
+  <button onclick="next()">One last thing</button>
 </div>
 
-<div class="screen fade">
+<div class="screen">
   <p class="type" data-text="No pressure. No expectations. — From someone who’s really glad they met you."></p>
-  <button onclick="prev()">Back</button>
+  <button onclick="goToStart()">Start again</button>
+</div>
+
 </div>
 
 <script>
@@ -158,8 +174,8 @@ function next() {
   if (index < screens.length - 1) showScreen(index + 1);
 }
 
-function prev() {
-  if (index > 0) showScreen(index - 1);
+function goToStart() {
+  showScreen(0);
 }
 
 function startTyping(screen) {
@@ -168,21 +184,37 @@ function startTyping(screen) {
     let text = el.getAttribute("data-text");
     el.innerHTML = "";
     let i = 0;
-    let speed = 30;
 
     function type() {
       if (i < text.length) {
         el.innerHTML += text.charAt(i);
         i++;
-        setTimeout(type, speed);
+        setTimeout(type, 25);
       }
     }
     type();
   });
 }
 
-// start typing first screen
 startTyping(screens[0]);
+
+/* Subtle particles */
+function createParticle() {
+  const particle = document.createElement("div");
+  particle.classList.add("particle");
+  particle.innerHTML = "♡";
+
+  particle.style.left = Math.random() * 100 + "%";
+  particle.style.animationDuration = (8 + Math.random() * 6) + "s";
+
+  document.getElementById("particles").appendChild(particle);
+
+  setTimeout(() => {
+    particle.remove();
+  }, 12000);
+}
+
+setInterval(createParticle, 1200);
 </script>
 
 </body>
