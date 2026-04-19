@@ -1,16 +1,20 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For You ❤️</title>
+
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: black;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a2e, #16213e);
   color: white;
   overflow: hidden;
 }
+
 .screen {
   display: none;
   height: 100vh;
@@ -18,87 +22,125 @@ body {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
 }
+
 .active { display: flex; }
 
 button {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: #ff4d6d;
   border: none;
   color: white;
   cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 .fade {
-  animation: fadeIn 2s;
+  animation: fadeIn 1.5s ease-in;
 }
 
 @keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.message {
+  max-width: 700px;
+  line-height: 1.6;
+  font-size: 16px;
+  text-align: left;
 }
 </style>
 </head>
 
 <body>
 
+<!-- Opening -->
 <div class="screen active fade">
   <h1>Hey… don’t rush this.</h1>
   <button onclick="next()">Take your time</button>
 </div>
 
+<!-- Intro -->
 <div class="screen fade">
-  <p id="text"></p>
+  <p>I didn’t expect much at first… but somehow, you became someone I look forward to.</p>
   <button onclick="next()">Continue</button>
 </div>
 
+<!-- Distance -->
 <div class="screen fade">
-  <p>I didn’t plan this… but you became important to me.</p>
+  <p>Even with the distance… you’ve found a way to be present.</p>
   <button onclick="next()">Continue</button>
 </div>
 
+<!-- Appreciation -->
 <div class="screen fade">
-  <p>At first, you were just you…</p>
+  <p>I like how easy it feels talking to you.  
+  I like how you make things feel… simple.</p>
   <button onclick="next()">Continue</button>
 </div>
 
+<!-- Honest -->
 <div class="screen fade">
-  <p>Then I started noticing everything.</p>
+  <p>It’s still new… but there’s something here.  
+  And I’m glad I didn’t ignore it.</p>
   <button onclick="next()">Continue</button>
 </div>
 
+<!-- Long message trigger -->
 <div class="screen fade">
-  <p>I appreciate you more than you know.</p>
+  <h2>There’s something I wanted to say…</h2>
+  <button onclick="next()">Read it</button>
+</div>
+
+<!-- Long message -->
+<div class="screen fade">
+  <div class="message">
+    <p>I won’t pretend we’ve known each other forever… because we haven’t. But somehow, in the time we’ve had, you’ve become someone I genuinely appreciate.</p>
+
+    <p>It’s funny how something new can still feel meaningful. How conversations can become something you look forward to, even when there’s distance between us.</p>
+
+    <p>I don’t think I say it enough, but I notice the little things—the way you show up, the way you make things feel easy, the way you’ve made your presence felt, even from far away.</p>
+
+    <p>And maybe that’s what I like the most… that nothing feels forced. It’s just been real, simple, and growing in its own way.</p>
+
+    <p>So today isn’t about saying too much or trying to define everything. It’s just about you.</p>
+
+    <p>I hope this year brings you clarity, growth, and moments that actually matter. I hope you become everything you’re working towards… and more.</p>
+
+    <p>And I hope, somewhere along the way, we get more time to build something worth remembering.</p>
+
+    <p><strong>Happy Birthday.</strong></p>
+  </div>
+
   <button onclick="next()">Continue</button>
 </div>
 
-<div class="screen fade">
-  <h2>And I didn’t know what to do with that feeling.</h2>
-  <button onclick="next()">Continue</button>
-</div>
-
+<!-- Birthday -->
 <div class="screen fade">
   <h1>Happy Birthday 🎉</h1>
   <p>I’m really glad you exist.</p>
   <button onclick="next()">One last thing</button>
 </div>
 
+<!-- Ending -->
 <div class="screen fade">
   <p>No pressure. No expectations.</p>
-  <p>I just wanted you to know.</p>
+  <p>— From someone who’s really glad they met you.</p>
 </div>
 
 <script>
-let screens = document.querySelectorAll('.screen');
+let screens = document.querySelectorAll(".screen");
 let index = 0;
 
 function next() {
-  screens[index].classList.remove('active');
+  screens[index].classList.remove("active");
   index++;
   if (screens[index]) {
-    screens[index].classList.add('active');
+    screens[index].classList.add("active");
   }
 }
 </script>
