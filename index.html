@@ -19,7 +19,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Container */
 .container {
   width: 90%;
   max-width: 600px;
@@ -28,20 +27,9 @@ body {
   z-index: 1;
 }
 
-/* Screens */
-.screen {
-  display: none;
-}
-.active {
-  display: block;
-}
+.screen { display: none; }
+.active { display: block; }
 
-/* Text */
-h1, h2, p {
-  line-height: 1.6;
-}
-
-/* Buttons */
 button {
   margin-top: 20px;
   padding: 12px 24px;
@@ -50,10 +38,16 @@ button {
   color: white;
   cursor: pointer;
   border-radius: 6px;
-  font-size: 15px;
 }
 
-/* Message (scrollable) */
+/* Image styling */
+.image-box img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Scrollable message */
 .message-wrapper {
   position: relative;
   max-height: 60vh;
@@ -66,38 +60,24 @@ button {
   margin: auto;
   max-height: 60vh;
   overflow-y: auto;
-  padding-right: 6px;
 }
 
-/* Scroll fade hint */
+/* Fade hint */
 .message-wrapper::after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 0;
   width: 100%;
   height: 40px;
   background: linear-gradient(to top, #0b0b0b, transparent);
-  pointer-events: none;
-}
-
-/* Mobile tweak */
-@media (max-width: 600px) {
-  .message {
-    max-height: 65vh;
-    font-size: 15px;
-  }
 }
 
 /* Floating hearts */
 #particles {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 0;
 }
 
 .particle {
@@ -108,17 +88,9 @@ button {
 }
 
 @keyframes floatUp {
-  from {
-    transform: translateY(100vh);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.3;
-  }
-  to {
-    transform: translateY(-10vh);
-    opacity: 0;
-  }
+  from { transform: translateY(100vh); opacity: 0; }
+  20% { opacity: 0.3; }
+  to { transform: translateY(-10vh); opacity: 0; }
 }
 </style>
 </head>
@@ -128,8 +100,6 @@ button {
 <div id="particles"></div>
 
 <div class="container">
-
-<!-- Screens -->
 
 <div class="screen active">
   <h1 class="type" data-text="Hey… don’t rush this."></h1>
@@ -147,45 +117,43 @@ button {
 </div>
 
 <div class="screen">
-  <p class="type" data-text="I like how easy it feels talking to you. I like how you make things feel… simple."></p>
-  <button onclick="next()">Continue</button>
-</div>
-
-<div class="screen">
-  <p class="type" data-text="It’s still new… but there’s something here. And I’m glad I didn’t ignore it."></p>
-  <button onclick="next()">Continue</button>
-</div>
-
-<div class="screen">
-  <h2 class="type" data-text="There’s something I wanted to say…"></h2>
+  <p class="type" data-text="There’s something I wanted to say…"></p>
   <button onclick="next()">Read it</button>
 </div>
 
-<!-- LONG MESSAGE FIXED -->
+<!-- LONG MESSAGE (UPDATED) -->
 <div class="screen">
   <div class="message-wrapper">
     <div class="message">
-      <p class="type" data-text="I won’t pretend we’ve known each other forever… because we haven’t. But somehow, in the time we’ve had, you’ve become someone I genuinely appreciate."></p>
-      <p class="type" data-text="It’s funny how something new can still feel meaningful. How conversations can become something you look forward to, even when there’s distance between us."></p>
-      <p class="type" data-text="I don’t think I say it enough, but I notice the little things—the way you show up, the way you make things feel easy, the way you’ve made your presence felt, even from far away."></p>
-      <p class="type" data-text="And maybe that’s what I like the most… that nothing feels forced. It’s just been real, simple, and growing in its own way."></p>
-      <p class="type" data-text="So today isn’t about saying too much or trying to define everything. It’s just about you."></p>
-      <p class="type" data-text="I hope this year brings you clarity, growth, and moments that actually matter. I hope you become everything you’re working towards… and more."></p>
-      <p class="type" data-text="And I hope, somewhere along the way, we get more time to build something worth remembering."></p>
+      <p class="type" data-text="I know we haven’t known each other for that long… but somehow, you’ve become more than I expected."></p>
+      <p class="type" data-text="It’s strange how something new can feel this real. How someone you didn’t plan for can slowly become part of your thoughts, your days… your space."></p>
+      <p class="type" data-text="And even with the distance, you’ve found a way to be present in a way that actually matters."></p>
+      <p class="type" data-text="I find myself appreciating the little things more than anything—the conversations, the energy, the way things just feel… easy with you."></p>
+      <p class="type" data-text="Nothing forced. Nothing complicated. Just something honest, growing quietly on its own."></p>
+      <p class="type" data-text="And I think that’s what makes it different."></p>
+      <p class="type" data-text="I won’t try to rush it or define it too quickly… but I won’t ignore it either."></p>
+      <p class="type" data-text="Because what we have—no matter how new—feels like something worth paying attention to."></p>
+      <p class="type" data-text="So today, I’m not just celebrating your birthday… I’m appreciating you."></p>
+      <p class="type" data-text="Who you are. The way you think. The presence you’ve had in my life already."></p>
+      <p class="type" data-text="I hope this year brings you clarity, success, and moments that actually mean something."></p>
+      <p class="type" data-text="And maybe… somewhere along the way, we get the chance to build something real out of this."></p>
       <p class="type" data-text="Happy Birthday."></p>
     </div>
   </div>
   <button onclick="next()">Continue</button>
 </div>
 
+<!-- IMAGE SECTION -->
 <div class="screen">
-  <h1 class="type" data-text="Happy Birthday 🎉"></h1>
-  <p class="type" data-text="I’m really glad you exist."></p>
-  <button onclick="next()">One last thing</button>
+  <h2 class="type" data-text="This moment matters."></h2>
+  <div class="image-box">
+    <img src="your-image.jpg" alt="memory">
+  </div>
+  <button onclick="next()">Continue</button>
 </div>
 
 <div class="screen">
-  <p class="type" data-text="No pressure. No expectations. — From someone who’s really glad they met you."></p>
+  <h1 class="type" data-text="Happy Birthday 🎉"></h1>
   <button onclick="goToStart()">Start again</button>
 </div>
 
@@ -230,7 +198,6 @@ function startTyping(screen) {
 
 startTyping(screens[0]);
 
-/* Floating hearts */
 function createParticle() {
   const particle = document.createElement("div");
   particle.classList.add("particle");
@@ -252,3 +219,4 @@ setInterval(createParticle, 600);
 
 </body>
 </html>
+
