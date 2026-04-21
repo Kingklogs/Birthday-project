@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You ❤️</title>
+<title>For Obim❤️</title>
 
 <style>
 body {
@@ -19,7 +18,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Container */
 .container {
   width: 90%;
   max-width: 600px;
@@ -28,19 +26,9 @@ body {
   z-index: 1;
 }
 
-/* Smooth screen transitions */
-.screen {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
+.screen { display: none; }
+.active { display: block; }
 
-.active {
-  display: block;
-  opacity: 1;
-}
-
-/* Buttons */
 button {
   margin-top: 20px;
   padding: 12px 24px;
@@ -51,19 +39,11 @@ button {
   border-radius: 6px;
 }
 
-/* Image animation */
+/* Image styling */
 .image-box img {
   max-width: 100%;
   border-radius: 10px;
   margin-top: 20px;
-  opacity: 0;
-  transform: scale(0.95);
-  transition: all 1s ease;
-}
-
-.image-box img.show {
-  opacity: 1;
-  transform: scale(1);
 }
 
 /* Scrollable message */
@@ -81,7 +61,7 @@ button {
   overflow-y: auto;
 }
 
-/* Scroll fade hint */
+/* Fade hint */
 .message-wrapper::after {
   content: "";
   position: absolute;
@@ -121,7 +101,7 @@ button {
 <div class="container">
 
 <div class="screen active">
-  <h1 class="type" data-text="Hey… don’t rush this."></h1>
+  <h1 class="type" data-text="Hey… Obim, don’t rush this."></h1>
   <button onclick="next()">Start</button>
 </div>
 
@@ -140,7 +120,7 @@ button {
   <button onclick="next()">Read it</button>
 </div>
 
-<!-- LONG MESSAGE -->
+<!-- LONG MESSAGE (UPDATED) -->
 <div class="screen">
   <div class="message-wrapper">
     <div class="message">
@@ -151,12 +131,11 @@ button {
       <p class="type" data-text="Nothing forced. Nothing complicated. Just something honest, growing quietly on its own."></p>
       <p class="type" data-text="And I think that’s what makes it different."></p>
       <p class="type" data-text="I won’t try to rush it or define it too quickly… but I won’t ignore it either."></p>
-      <p class="type" data-text="Because what we have—no matter how new—feels like something worth paying attention to."></p>
       <p class="type" data-text="So today, I’m not just celebrating your birthday… I’m appreciating you."></p>
       <p class="type" data-text="Who you are. The way you think. The presence you’ve had in my life already."></p>
       <p class="type" data-text="I hope this year brings you clarity, success, and moments that actually mean something."></p>
       <p class="type" data-text="And maybe… somewhere along the way, we get the chance to build something real out of this."></p>
-      <p class="type" data-text="Happy Birthday."></p>
+      <p class="type" data-text="Happy Birthday My Love❤️🫂."></p>
     </div>
   </div>
   <button onclick="next()">Continue</button>
@@ -164,15 +143,15 @@ button {
 
 <!-- IMAGE SECTION -->
 <div class="screen">
-  <h2 class="type" data-text="This moment matters."></h2>
+  <h2 class="type" data-text="You matter to me alot 🥹."></h2>
   <div class="image-box">
-    <img src="photo.jpg" alt="memory">
+    <img src="WhatsApp Image 2026-04-18 at 18.56.30.jpeg" alt="memory">
   </div>
   <button onclick="next()">Continue</button>
 </div>
 
 <div class="screen">
-  <h1 class="type" data-text="Happy Birthday 🎉"></h1>
+  <h1 class="type" data-text="Happy Birthday My Love🎉"></h1>
   <button onclick="goToStart()">Start again</button>
 </div>
 
@@ -187,12 +166,6 @@ function showScreen(i) {
   index = i;
   screens[index].classList.add("active");
   startTyping(screens[index]);
-
-  // Image animation trigger
-  let img = screens[index].querySelector("img");
-  if (img) {
-    setTimeout(() => img.classList.add("show"), 300);
-  }
 }
 
 function next() {
@@ -223,7 +196,6 @@ function startTyping(screen) {
 
 startTyping(screens[0]);
 
-/* Floating hearts */
 function createParticle() {
   const particle = document.createElement("div");
   particle.classList.add("particle");
